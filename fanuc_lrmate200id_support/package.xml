@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
   <name>fanuc_lrmate200id_support</name>
   <version>0.1.0</version>
@@ -39,9 +38,10 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <test_depend>roslaunch</test_depend>
+  <test_depend version_gte="1.9.55">roslaunch</test_depend>
 
   <exec_depend>fanuc_driver</exec_depend>
+  <exec_depend>fanuc_resources</exec_depend>
   <exec_depend>joint_state_publisher</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>rviz</exec_depend>
@@ -60,8 +60,5 @@
         <tag>experimental</tag>
       </tags>
     </rosindex>
-    <ros_industrial>
-      <support_level value="community" />
-    </ros_industrial>
   </export>
 </package>

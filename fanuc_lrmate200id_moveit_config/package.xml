@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
   <name>fanuc_lrmate200id_moveit_config</name>
   <version>0.1.0</version>
@@ -30,8 +29,6 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <test_depend>roslaunch</test_depend>
-
   <exec_depend>fanuc_lrmate200id_moveit_plugins</exec_depend>
   <exec_depend>fanuc_lrmate200id_support</exec_depend>
   <exec_depend>industrial_robot_simulator</exec_depend>
@@ -40,11 +37,8 @@
   <exec_depend>moveit_planners_ompl</exec_depend>
   <exec_depend>moveit_ros_move_group</exec_depend>
   <exec_depend>moveit_ros_visualization</exec_depend>
-  <exec_depend>moveit_ros_warehouse</exec_depend>
   <exec_depend>moveit_simple_controller_manager</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
-  <exec_depend>rviz</exec_depend>
-  <exec_depend>warehouse_ros</exec_depend>
   <exec_depend>xacro</exec_depend>
 
   <export>
@@ -59,8 +53,5 @@
         <tag>experimental</tag>
       </tags>
     </rosindex>
-    <ros_industrial>
-      <support_level value="community" />
-    </ros_industrial>
   </export>
 </package>
