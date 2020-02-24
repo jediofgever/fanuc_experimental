@@ -1,0 +1,30 @@
+<launch>
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <arg name="remap" default="true"/>
+  
+  <group if="$(arg remap)">
+    <!-- remap topics to conform to ROS-I specifications -->
+    <remap from="/arm_controller/follow_joint_trajectory" to="/joint_trajectory_action" />
+    <remap from="/arm_controller/state" to="/feedback_states" />
+    <remap from="/arm_controller/command" to="/joint_path_command"/>
+    
+    <!-- startup simulated world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+  <arg name="debug" value="$(arg debug)" />
+  <arg name="gui" value="$(arg gui)" />
+  <arg name="paused" value="$(arg paused)"/>
+  <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+  <arg name="headless" value="$(arg headless)"/>
+  <!-- arg name="world_name" value="$(find task_1)/world/tutorial_testing.world"/ -->
+  </include>
+  </group>
+
+  <!-- send robot URDF to ROS param server,
+       and spawn robot in Gazebo, along with necessary ROS nodes -->
+  <include file="$(find fanuc_lrmate200id_gazebo)/launch/spawn_lrmate200id7l.launch"/>
+
+</launch>

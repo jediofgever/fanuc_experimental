@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
   <name>fanuc_experimental</name>
   <version>0.1.0</version>
@@ -13,29 +14,24 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <exec_depend>fanuc_lrmate200ib_moveit_config</exec_depend>
-  <exec_depend>fanuc_lrmate200ib_support</exec_depend>
-  <exec_depend>fanuc_lrmate200ib3l_moveit_config</exec_depend>
   <exec_depend>fanuc_lrmate200id_moveit_config</exec_depend>
   <exec_depend>fanuc_lrmate200id_moveit_plugins</exec_depend>
   <exec_depend>fanuc_lrmate200id_support</exec_depend>
-  <exec_depend>fanuc_m6ib_support</exec_depend>
-  <exec_depend>fanuc_m710ic_support</exec_depend>
-  <exec_depend>fanuc_m900ia_support</exec_depend>
-  <exec_depend>fanuc_r1000ia_moveit_plugins</exec_depend>
-  <exec_depend>fanuc_r1000ia_support</exec_depend>
-  <exec_depend>fanuc_r1000ia80f_moveit_config</exec_depend>
 
   <export>
+    <architecture_independent/>
     <metapackage/>
     <rosindex>
       <tags>
-        <tag>metapackage</tag>
+        <tag>experimental</tag>
         <tag>fanuc</tag>
         <tag>industrial</tag>
+        <tag>metapackage</tag>
         <tag>ros-industrial</tag>
-        <tag>experimental</tag>
       </tags>
     </rosindex>
+    <ros_industrial>
+      <support_level value="community" />
+    </ros_industrial>
   </export>
 </package>
