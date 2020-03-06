@@ -2,14 +2,14 @@
   <!-- The planning and execution components of MoveIt! configured to run -->
   <!-- using the ROS-Industrial interface. -->
 
-  <include file="$(find fanuc_arm_for_chicony)/launch/robot_vision_system.launch">
+  <include file="$(find fanuc_arm_perception_utilities)/launch/robot_vision_system.launch">
   </include>
 
 
 
   <node name="rqt_gui" pkg="rqt_gui" type="rqt_gui"/>
   <!--
-  <include file="$(find fanuc_arm_for_chicony)/launch/robot_gui_control.launch">
+  <include file="$(find fanuc_arm_perception_utilities)/launch/robot_gui_control.launch">
   </include>
   -->
 
