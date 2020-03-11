@@ -21,7 +21,7 @@ endif()
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${SDFormat_INCLUDE_DIRS} ${EIGEN3_INCLUDE_DIR}  )
 include_directories(include ${fanuc_arm_perception_utilities_INCLUDE_DIRS})
-include_directories(include /home/atas/catkin_ws/src/PICK_PLACE_with_ROS_on_FANUC_ARM/fanuc_arm_perception_utilities/include/)
+include_directories(include ~/catkin_ws/src/PICK_PLACE_with_ROS_on_FANUC_ARM/fanuc_arm_perception_utilities/include/)
 
 catkin_package(
   #INCLUDE_DIRS  ${GAZEBO_INCLUDE_DIRS}
@@ -31,10 +31,10 @@ catkin_package(
 )  
 
 set(SOURCES
-      /home/atas/catkin_ws/src/PICK_PLACE_with_ROS_on_FANUC_ARM/fanuc_arm_perception_utilities/src/pickplace/PickandPlacer.cpp
-      /home/atas/catkin_ws/src/PICK_PLACE_with_ROS_on_FANUC_ARM/fanuc_arm_perception_utilities/src/utils.cpp
-      /home/atas/catkin_ws/src/PICK_PLACE_with_ROS_on_FANUC_ARM/fanuc_arm_perception_utilities/src/control/RobotController.cpp
-      /home/atas/catkin_ws/src/PICK_PLACE_with_ROS_on_FANUC_ARM/fanuc_arm_perception_utilities/src/pickplace/PickandPlacer.cpp)
+      ~/catkin_ws/src/PICK_PLACE_with_ROS_on_FANUC_ARM/fanuc_arm_perception_utilities/src/pickplace/PickandPlacer.cpp
+      ~/catkin_ws/src/PICK_PLACE_with_ROS_on_FANUC_ARM/fanuc_arm_perception_utilities/src/utils.cpp
+      ~/catkin_ws/src/PICK_PLACE_with_ROS_on_FANUC_ARM/fanuc_arm_perception_utilities/src/control/RobotController.cpp
+      ~/catkin_ws/src/PICK_PLACE_with_ROS_on_FANUC_ARM/fanuc_arm_perception_utilities/src/pickplace/PickandPlacer.cpp)
  
 add_library(model_push SHARED plugins/MoveObject.cc)
 target_link_libraries(model_push ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES})

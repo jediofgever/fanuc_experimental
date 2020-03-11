@@ -4,10 +4,8 @@
 
   <include file="$(find fanuc_arm_perception_utilities)/launch/robot_vision_system.launch">
   </include>
-
-
-
-  <node name="rqt_gui" pkg="rqt_gui" type="rqt_gui"/>
+  <node name="rqt_gui" pkg="rqt_gui" type="rqt_gui" args="--perspective-file $(find fanuc_arm_perception_utilities)/cfg/default.perspective"/>
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find fanuc_arm_perception_utilities)/cfg/default.rviz" />
   <!--
   <include file="$(find fanuc_arm_perception_utilities)/launch/robot_gui_control.launch">
   </include>
