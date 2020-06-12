@@ -26,7 +26,7 @@
 namespace gazebo {
 
 /**
- * @brief This Class coopeartes with pckplace/SimulationPickPlace in order to perform pick and place in gazebo simulator
+ * @brief This Class cooperates with pickplace/SimulationPickPlace in order to perform pick and place in gazebo simulator
  *
  */
 class SimulationPickandPlace : public WorldPlugin {
@@ -37,7 +37,7 @@ class SimulationPickandPlace : public WorldPlugin {
     // Pointer to the update event connection
     event::ConnectionPtr updateConnection;
 
-    // ROS nodel handler to handle usual ROS stuff(publisher , subscriber etc..)
+    // ROS node handler to handle usual ROS stuff(publisher , subscriber etc..)
     ros::NodeHandle *nh_;
 
     // Publish ground truth 3d box of each object for pick and place

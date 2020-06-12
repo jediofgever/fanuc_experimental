@@ -73,7 +73,7 @@ void SimulationPickandPlace::OnUpdate() {
     // base link of robot
     std::string base_link_name = "base_link";
 
-    // Vector of MOdel pointers, first we will find the object to be picked by their name and then store them in this
+    // Vector of Model pointers, first we will find the object to be picked by their name and then store them in this
     // vector.
     physics::Model_V objects_tobe_picked;
 
@@ -110,14 +110,14 @@ void SimulationPickandPlace::OnUpdate() {
 
         // Find object to be picked and store them into objects_tobe_picked vector. Since all these objects begins with
         // pulley
-        // we chechk if the string starts with this substring which is "pulley"
+        // we check if the string starts with this substring which is "pulley"
         if (current_model_name.substr(0, 6) == "pulley") {
             // store this obejct in objects_tobe_picked
             objects_tobe_picked.push_back(current_model);
         }
     }
 
-    // We will publish JSK boxes in RVIZ for visuaization
+    // We will publish JSK boxes in RVIZ for visualization
     jsk_recognition_msgs::BoundingBoxArray gt_box_array;
     // These boxes should be in camera frame
     gt_box_array.header.frame_id = "camera_depth_optical_frame";
@@ -129,7 +129,7 @@ void SimulationPickandPlace::OnUpdate() {
     // gripper
     // using this loop. If distance of gripper link and  current object to be picked gets under a certain value( 0.06)
     // we will attach that object to gripper, and then the gripper will go to the pose of placing , again when gripper
-    // link is achieved to placing pose we will de atach the object
+    // link is achieved to placing pose we will de-attach the object
     for (int o = 0; o < objects_tobe_picked.size(); o++) {
         // Current object to be picked
         physics::ModelPtr current_object_tobe_picked = objects_tobe_picked[o];
@@ -142,11 +142,11 @@ void SimulationPickandPlace::OnUpdate() {
             getDistanceBetweenPoints(gripper_link_position_world_frame, current_object_position_world_frame);
 
         // If this distance is lower than 0.06 meters, that means the Robot Has detected this object and is trying to
-        // pick the object So we enter a pick-place piplene to perfrom manipulation on this object
+        // pick the object So we enter a pick-place pipeline to perfrom manipulation on this object
         if (distance_to_tool_link_meters < 0.08) {
             // ROS_INFO("PICKING OBJECT");
 
-            // Attach the object to the gripper, with a litlle ofset in z axis
+            // Attach the object to the gripper, with a little offset in z axis
             ignition::math::Pose3d attach_object_to_gripper_pose(
                 gripper_link_position_world_frame[0], gripper_link_position_world_frame[1],
                 (gripper_link_position_world_frame[2] - 0.04), 0, -1, 0, 0);
@@ -190,7 +190,7 @@ void SimulationPickandPlace::OnUpdate() {
                     // place the object
                     current_object_tobe_picked->SetWorldPose(place_pose, true, true);
 
-                    // eneable back the gravity for object
+                    // enable back the gravity for object
                     current_object_tobe_picked->SetGravityMode(true);
                 }
             }
@@ -214,7 +214,7 @@ void SimulationPickandPlace::OnUpdate() {
         pose_in_world_frame.orientation.z = rot.Z();
         pose_in_world_frame.orientation.w = rot.W();
 
-        // This object pose is in world frmae but its better if we represent it in camera frame
+        // This object pose is in world frame but its better if we represent it in camera frame
         tf::Transform pose_in_world_frame_tf;
         tf::poseMsgToTF(pose_in_world_frame, pose_in_world_frame_tf);
 
